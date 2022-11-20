@@ -32,6 +32,7 @@ public class Transaction implements BankingDetails {
         }
     }
 
+    
     @Override
     public void transfer(Customer customer, double amount, String receiver_num) {
         customer.setBalance(customer.getBalance()-amount);
