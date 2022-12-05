@@ -181,7 +181,8 @@ public class CustomerView
         System.out.println("3.Withdraw");
         System.out.println("4.Transfer");
         System.out.println("5.Check Balance");
-        System.out.println("6.Logout");
+        System.out.println("6.View Previous Transactions");
+        System.out.println("7.Logout");
         System.out.println(z);
         String tch;
         while(true){
