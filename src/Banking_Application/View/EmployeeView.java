@@ -113,7 +113,7 @@ public class EmployeeView {
         if(pass.equals(logemployee.getPassword()))
         {
             EmployeeTasks();
-            System.out.println(z);
+            
             return true;
         }
         else{
@@ -126,7 +126,7 @@ public class EmployeeView {
         DatabaseRetrieve databaseRetrieve=new DatabaseRetrieve();
         Customer customer=new Customer();
         CustomerControl customerControl=new CustomerControl();
-     
+        System.out.println(z);
         while(choice!=6)
         {
         System.out.println("1.Approve account");

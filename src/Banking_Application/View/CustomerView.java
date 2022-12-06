@@ -174,8 +174,9 @@ public class CustomerView
         int ch=0;
         Transaction transaction=new Transaction();
         DatabaseRetrieve dbview=new DatabaseRetrieve();
-        while(ch!=7){
         System.out.println(z);
+        while(ch!=7){
+        
         System.out.println("1.View Account details");
         System.out.println("2.Deposit");
         System.out.println("3.Withdraw");
