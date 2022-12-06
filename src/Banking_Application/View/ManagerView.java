@@ -52,10 +52,9 @@ public class ManagerView {
         EmployeeControl empControl=new EmployeeControl();
         Validate validate=new Validate();
         int choice=0;
-        
+        System.out.println(z);
         while(choice!=7)
         {
-            System.out.println(z);
             System.out.println("1.Approve Account");
             System.out.println("2.Edit Database");
             System.out.println("3.View Database");
