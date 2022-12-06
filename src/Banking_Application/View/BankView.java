@@ -10,7 +10,7 @@ public class BankView {
     public String z="----------------------------------".repeat(3);
     public void app()
     {
-        int choice=0,ch=0;
+        int ch=0;
         System.out.println(z+"\n\t\t\tWELCOME TO BANK OF ZOZO\n"+z);
         while(ch!=4){
             System.out.println("Enter 1 -> Manager");
@@ -44,6 +44,7 @@ public class BankView {
                 }
                 case 2:
                 {
+                    int choice=0;
                     while(choice!=3)
                     {
                     System.out.println("Enter 1 -> New Employee Login");
@@ -78,6 +79,7 @@ public class BankView {
                         }
                         case 3:
                         {
+                            System.out.println("Tank you\n"+z);
                             break;
                         }
                         default:
@@ -91,7 +93,7 @@ public class BankView {
                 }
                 case 3:
                 {
-                    choice=0;
+                    int choice=0;
                     while(choice!=3)
                     {
                     System.out.println("Enter 1 -> New Account Registration");

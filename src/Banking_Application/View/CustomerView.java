@@ -111,10 +111,10 @@ public class CustomerView
         customer.setPan(pan);
         customer.setUsername(username);
         customer.setPassword(password);
-        customer.setAccnum(null);
+        customer.setAccnum("-");
         customer.setBalance(0);
-        customer.setAddedby(null);
-        customer.setDesignation(null);
+        customer.setAddedby("-");
+        customer.setDesignation("-");
 
         customerControl.addToCustomerTable(customer);
     }
@@ -140,7 +140,7 @@ public class CustomerView
 
         System.out.println(z);
         if(logcustomer.getAccnum()==null){
-            System.out.println("Your account is not verified yet...Please wait");
+            System.out.println("Your account is not verified yet...Please wait\n"+z);
             return false;
         }
         System.out.print("Enter your password: ");
@@ -206,6 +206,10 @@ public class CustomerView
             {
                 System.out.println("Enter the deposit amount: ");
                 double amount=s.nextDouble();
+                if(amount>30000){
+                    System.out.println("Maximum limit exceeded");
+                    break;
+                }
                 transaction.deposit(logcustomer,amount);
                 System.out.println(z+"\n\t\tBANK OF ZOZO\n"+z);
                 System.out.println("Name: "+logcustomer.getName()+"\t\tAccount number: "+logcustomer.getAccnum());
@@ -218,6 +222,10 @@ public class CustomerView
             {
                 System.out.println("Enter the amount you need to withdraw: ");
                 double amount=s.nextDouble();
+                if(amount>30000){
+                    System.out.println("Maximum limit exceeded");
+                    break;
+                }
                 if(logcustomer.getBalance()-amount<2000){
                     System.out.println("Withdrawal not possible. Enter higher amount!!");
                     break;
@@ -244,6 +252,10 @@ public class CustomerView
                 catch(SQLException e){}
                 System.out.println("Enter the amount you want to transfer: ");
                 double amount=s.nextDouble();
+                if(amount>30000){
+                    System.out.println("Maximum limit exceeded");
+                    break;
+                }
                 if(logcustomer.getBalance()-amount<2000){
                     System.out.println("Cannot transfer amount. Minimum balance should be maintained...");
                     break;
@@ -269,6 +281,7 @@ public class CustomerView
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                break;
             }
             case 7:
             {

@@ -25,6 +25,13 @@ public class BankControl
                 for(int i =0; i < 10;i++)
                 {
                 n = Math.abs(rand.nextInt(10));
+                
+                if(i==0 && n==0){
+                    n=3;
+                }
+                if(n<0){
+                    n=7;
+                }
                 transactionid=transactionid*10+n;         
                 }
                 java.util.Date javaDate = new java.util.Date();

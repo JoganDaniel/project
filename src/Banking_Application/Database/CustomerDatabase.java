@@ -115,11 +115,11 @@ public class CustomerDatabase {
         
         ps.executeUpdate();
     }
-    public void deleteCustomer(Customer customer) throws SQLException
+    public void deleteCustomer(String user) throws SQLException
     {
-        String query="delete from Customer where Account_Number=?";
+        String query="delete from Customer where Username = ?";
         PreparedStatement ps=conn.prepareStatement(query);
-        ps.setString(1, customer.getAccnum());
+        ps.setString(1, user);
         ps.executeUpdate();
     }
 }

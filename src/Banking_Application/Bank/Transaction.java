@@ -21,11 +21,11 @@ public class Transaction implements BankingDetails {
     @Override
     public void withdraw(Customer customer, double amount) {
        double balance=customer.getBalance();
-       if(balance-amount>=min){
+       if(balance-amount>=min && amount<=max_limit){
         customer.setBalance(balance-amount);
         try {
             customerControl.updateCustomer(customer);
-            bankControl.addToTransactionTable(customer.getAccnum(), amount, "Dr", " ");
+            bankControl.addToTransactionTable(customer.getAccnum(), amount, "Dr", "-");
         } catch (SQLException e) {
             e.printStackTrace();
             }
@@ -35,6 +35,8 @@ public class Transaction implements BankingDetails {
     
     @Override
     public void transfer(Customer customer, double amount, String receiver_num) {
+        if(customer.getBalance()-amount>=min && amount<=max_limit)
+        {
         customer.setBalance(customer.getBalance()-amount);
         try {
             Customer receiver=customerControl.getCustomerAc(receiver_num);
@@ -44,7 +46,8 @@ public class Transaction implements BankingDetails {
             bankControl.addToTransactionTable(customer.getAccnum(), amount, "Tr", receiver_num);
         } catch (SQLException e) {
             e.printStackTrace();
+            }
         }
 
     }
-    }
+}

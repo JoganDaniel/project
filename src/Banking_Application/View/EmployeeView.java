@@ -101,14 +101,13 @@ public class EmployeeView {
         logemployee=empControl.getEmployee(empid);
         System.out.println("Enter your password");
         String pass;
-        pass=s.nextLine();
         while(true)
         {
+            pass=s.nextLine();
             if(validate.Password(pass))
             {
                 break;
             }
-            pass=s.nextLine();
         }
         if(pass.equals(logemployee.getPassword()))
         {
@@ -141,6 +140,10 @@ public class EmployeeView {
         {
             case 1:
             {
+                if(databaseRetrieve.UnapprovedCustomers()==false){
+                    System.out.println("No accounts to be approved");
+                    break;
+                }
                 databaseRetrieve.UnapprovedCustomers();
                 //System.out.println(z);
                 System.out.println("Enter the username of the customer to be approved: ");
@@ -177,7 +180,65 @@ public class EmployeeView {
             }
             case 2:
                 {
-                    //Edit Employee details
+                    System.out.println("What do you want to edit\n"+z);
+                    System.out.println("1.Name\n2.Address\n3.Mobile\n4.Username\n5.Pan");           
+                    String temch;
+                    while(true){
+                    temch=s.nextLine();
+                    if(validate.choicecheck(temch)){
+                    break;
+                        }
+                    }
+                    int editch=Integer.parseInt(temch);
+                    if(editch==1){
+                        String name1="";
+                        System.out.print("Enter new name: ");
+                        while(true){
+                            name1=s.nextLine();
+                        if(validate.Name(name1)){
+                        break;}
+                        }
+                        logemployee.setName(name1);
+                    }
+                    if(editch==2){
+                        System.out.println("Enter new address");
+                        String address=s.nextLine();
+                        logemployee.setAddress(address); 
+                    }
+                    if(editch==3){
+                        String tempnum="";
+                        System.out.print("Enter new mobile number: ");
+                        while(true){
+                            tempnum=s.nextLine();
+                            if(validate.Mobilenumber(tempnum)){
+                                break;}
+                        }
+                        logemployee.setMobile(Long.parseLong(tempnum));
+                    }
+                    if(editch==4){
+                        String username="";
+                        while(true){
+                            System.out.println("Enter new Username\n"+z);
+                            username=s.nextLine();
+                            if(validate.Username(username)){
+                                break;
+                            }
+                        }
+                        logemployee.setUsername(username);
+                    }
+                    if(editch==5){
+                        String pan;
+                        System.out.print("Enter new PAN: ");
+                        while(true)
+                        {
+                            pan=s.nextLine();
+                            if(validate.Pan(pan)){
+                                break;
+                            }
+                        }
+                        logemployee.setPan(pan);
+                    }
+                    empControl.updateEmployee(logemployee);
                     break;
                 }
             case 3:

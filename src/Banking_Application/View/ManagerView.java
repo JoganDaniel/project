@@ -77,7 +77,10 @@ public class ManagerView {
             {
                 case 1:
                 {
-                    databaseRetrieve.UnapprovedCustomers();
+                    if(databaseRetrieve.UnapprovedCustomers()==false){
+                        System.out.println("No customers to be approved");
+                        break;
+                    }
                     //System.out.println(z);
                     System.out.println("Enter the username of the customer to be approved: ");
                     String user=s.nextLine();
@@ -143,7 +146,7 @@ public class ManagerView {
                             break;
                                 }
                             }
-                            int editch=Integer.parseInt(tch);
+                            int editch=Integer.parseInt(temch);
                             if(editch==1){
                                 String name1="";
                                 System.out.print("Enter new name: ");
@@ -230,7 +233,7 @@ public class ManagerView {
                             break;
                                 }
                             }
-                            int editch=Integer.parseInt(tch);
+                            int editch=Integer.parseInt(temch);
                             if(editch==1){
                                 String name1="";
                                 System.out.print("Enter new name: ");
@@ -367,6 +370,7 @@ public class ManagerView {
                             s.nextLine();
                             String user=s.nextLine();
                             Customer customer2=customerControl.getCustomer(user);
+                            System.out.println("Your account number: "+customer2.getAccnum()+"\n"+z);
                             databaseRetrieve.displayTransaction(customer2.getAccnum());
                             break;
                         }
@@ -421,7 +425,53 @@ public class ManagerView {
                 }
                 case 6:
                 {
-                    
+                    System.out.println("1.Remove Customer\n2.Remove Employee\n"+z);
+                    String tch;
+                    while(true){
+                    tch=s.nextLine();
+                    if(validate.choicecheck(tch)){
+                    break;
+                        }
+                    }
+                    int ch=Integer.parseInt(tch);
+                    switch(ch)
+                    {
+                        case 1:
+                        {
+                            String username="";
+                                    System.out.println("Enter the Username of the customer\n"+z);
+                                    username=s.nextLine();
+                                    if(validate.Username(username)==false){
+                                        break;
+                                    }
+                            if(customerControl.checkUser(username)){
+                                customerControl.deleteCustomer(username);
+                            }    
+                            else{
+                                System.out.println("Username not exixts");
+                            }
+                            break;
+                        }
+                        case 2:
+                        {
+                
+                            System.out.println("Enter the Employee id of the staff to be removed");
+                            int eid=s.nextInt();
+                            if(empControl.checkEmployeeexists(eid)){
+                                empControl.deleteEmployee(eid);
+                            }
+                            else{
+                                System.out.println("Id incorrect...");
+                            }
+                            break;
+                        }
+                        default:
+                        {
+                            System.out.println("Wrong choice");
+                            break;
+                        }
+                    }
+                    break;
                 }
                 case 7:
                 {

@@ -43,9 +43,9 @@ public class CustomerControl {
         customerDatabase.updateCustomer(customer);
     }
 
-    public void deleteCustomer(Customer customer) throws SQLException
+    public void deleteCustomer(String user) throws SQLException
     {
-        customerDatabase.deleteCustomer(customer);
+        customerDatabase.deleteCustomer(user);
     }
 
 

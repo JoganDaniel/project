@@ -61,7 +61,7 @@ public class DatabaseRetrieve {
             customer.setAccnum(rs.getString("Account_number"));
             customer.setUsername(rs.getString("Username"));
             customer.setAddedby(rs.getString("Added_by"));
-            customer.setDesignation(rs.getString("Designation"));
+            customer.setDesignation(rs.getString("Approver_Designation"));
         }
         dbview.displayCustomerDetails(customer, empid);
     }
@@ -84,19 +84,22 @@ public class DatabaseRetrieve {
             customer.setAccnum(rs.getString("Account_number"));
             customer.setUsername(rs.getString("Username"));
             customer.setAddedby(rs.getString("Added_by"));
-            customer.setDesignation(rs.getString("Designation"));
+            customer.setDesignation(rs.getString("Approver_Designation"));
             customerList.add(customer);
         }
         dbview.displayAllCustomers(customerList, empid);
     }
 
-    public void UnapprovedCustomers() throws SQLException
+    public boolean UnapprovedCustomers() throws SQLException
     {
         
-        String query="select * from Customer where Balance= 0";
+        String query="select * from Customer where Account_number ='-'";
         PreparedStatement ps=conn.prepareStatement(query);
         ResultSet rs=ps.executeQuery();
         List<Customer> customerList=new ArrayList<Customer>();
+        if(rs.next()==false){
+            return false;
+        }
         while(rs.next())
         {
             customer=new Customer();
@@ -111,6 +114,7 @@ public class DatabaseRetrieve {
             customerList.add(customer);
         }
         dbview.displayUnapprovedCustomers(customerList);
+        return true;
     }
     TransactionModel transaction;
     public void displayTransaction(String accnum) throws SQLException
