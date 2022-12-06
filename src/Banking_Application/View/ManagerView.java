@@ -73,14 +73,12 @@ public class ManagerView {
                     }
                 }
             choice=Integer.parseInt(tchoice);
+            System.out.println(z);
             switch(choice)
             {
                 case 1:
                 {
-                    if(databaseRetrieve.UnapprovedCustomers()==false){
-                        System.out.println("No customers to be approved");
-                        break;
-                    }
+                    databaseRetrieve.UnapprovedCustomers();
                     //System.out.println(z);
                     System.out.println("Enter the username of the customer to be approved: ");
                     String user=s.nextLine();

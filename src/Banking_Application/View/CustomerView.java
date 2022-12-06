@@ -139,7 +139,7 @@ public class CustomerView
         logcustomer=customerControl.getCustomer(user);
 
         System.out.println(z);
-        if(logcustomer.getAccnum()==null){
+        if(logcustomer.getAccnum().equals("-")){
             System.out.println("Your account is not verified yet...Please wait\n"+z);
             return false;
         }

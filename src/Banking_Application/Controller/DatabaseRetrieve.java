@@ -90,16 +90,13 @@ public class DatabaseRetrieve {
         dbview.displayAllCustomers(customerList, empid);
     }
 
-    public boolean UnapprovedCustomers() throws SQLException
+    public void UnapprovedCustomers() throws SQLException
     {
         
-        String query="select * from Customer where Account_number ='-'";
+        String query="select * from Customer where Account_number = '-'";
         PreparedStatement ps=conn.prepareStatement(query);
         ResultSet rs=ps.executeQuery();
         List<Customer> customerList=new ArrayList<Customer>();
-        if(rs.next()==false){
-            return false;
-        }
         while(rs.next())
         {
             customer=new Customer();
@@ -114,7 +111,6 @@ public class DatabaseRetrieve {
             customerList.add(customer);
         }
         dbview.displayUnapprovedCustomers(customerList);
-        return true;
     }
     TransactionModel transaction;
     public void displayTransaction(String accnum) throws SQLException

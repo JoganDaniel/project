@@ -79,7 +79,7 @@ public class BankView {
                         }
                         case 3:
                         {
-                            System.out.println("Tank you\n"+z);
+                            System.out.println("Thank you\n"+z);
                             break;
                         }
                         default:

@@ -101,6 +101,7 @@ public class EmployeeView {
         logemployee=empControl.getEmployee(empid);
         System.out.println("Enter your password");
         String pass;
+        s.nextLine();
         while(true)
         {
             pass=s.nextLine();
@@ -112,6 +113,7 @@ public class EmployeeView {
         if(pass.equals(logemployee.getPassword()))
         {
             EmployeeTasks();
+            System.out.println(z);
             return true;
         }
         else{
@@ -127,7 +129,7 @@ public class EmployeeView {
      
         while(choice!=6)
         {
-        System.out.println("1.Approve accounnt");
+        System.out.println("1.Approve account");
         System.out.println("2.Edit your details");
         System.out.println("3.View a Customer information");
         System.out.println("4.View all customer details");
@@ -140,10 +142,6 @@ public class EmployeeView {
         {
             case 1:
             {
-                if(databaseRetrieve.UnapprovedCustomers()==false){
-                    System.out.println("No accounts to be approved");
-                    break;
-                }
                 databaseRetrieve.UnapprovedCustomers();
                 //System.out.println(z);
                 System.out.println("Enter the username of the customer to be approved: ");

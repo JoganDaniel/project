@@ -98,7 +98,7 @@ public class CustomerDatabase {
 
     public void updateCustomer(Customer customer) throws SQLException
     {
-        String query="update Customer set Name=?, Address=? ,Mobile=? ,Aadhar=? ,Pan=? , Balance =? ,Account_number=?, Username=?, Password=?, Added_by=?, Approver_Designation=? where Account_number = ?";
+        String query="update Customer set Name=?, Address=? ,Mobile=? ,Aadhar=? ,Pan=? , Balance =? ,Account_number=?, Username=?, Password=?, Added_by=?, Approver_Designation=? where Username = ?";
         PreparedStatement ps=conn.prepareStatement(query);
         ps.setString(1,customer.getName());
         ps.setString(2,customer.getAddress());
@@ -111,7 +111,7 @@ public class CustomerDatabase {
         ps.setString(9,customer.getPassword());
         ps.setString(10,customer.getAddedby());
         ps.setString(11,customer.getDesignation());
-        ps.setString(12,customer.getAccnum());
+        ps.setString(12,customer.getUsername());
         
         ps.executeUpdate();
     }
