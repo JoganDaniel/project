@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.Random;
 import java.util.Scanner;
 
-import Banking_Application.Bank.Validate;
 import Banking_Application.Controller.CustomerControl;
 import Banking_Application.Controller.DatabaseRetrieve;
 import Banking_Application.Controller.EmployeeControl;

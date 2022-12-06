@@ -1,4 +1,4 @@
-package Banking_Application.Bank;
+package Banking_Application.View;
 
 public class Validate {
     public static String z="----------------------------------".repeat(3);

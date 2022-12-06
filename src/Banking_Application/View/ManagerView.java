@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-import Banking_Application.Bank.Validate;
 import Banking_Application.Controller.BankControl;
 import Banking_Application.Controller.CustomerControl;
 import Banking_Application.Controller.DatabaseRetrieve;

@@ -2,7 +2,6 @@ package Banking_Application.View;
 import java.util.*;
 
 import Banking_Application.Bank.Transaction;
-import Banking_Application.Bank.Validate;
 import Banking_Application.Controller.BankControl;
 import Banking_Application.Controller.CustomerControl;
 import Banking_Application.Controller.DatabaseRetrieve;

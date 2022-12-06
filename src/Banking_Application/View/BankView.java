@@ -1,8 +1,6 @@
 package Banking_Application.View;
 import java.sql.SQLException;
 import java.util.*;
-
-import Banking_Application.Bank.Validate;
 public class BankView {
 
     private Scanner s=new Scanner(System.in);
