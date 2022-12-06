@@ -13,7 +13,7 @@ public class CustomerDatabase {
 
     public void addToCustomerTable(Customer customer) throws SQLException
     {
-        String query="insert into Customer(Name,Address,Mobile,Aadhar,Pan,Balance,Account_number,Username,Password,Added_by,Designation) values(?,?,?,?,?,?,?,?,?,?,?)";
+        String query="insert into Customer(Name,Address,Mobile,Aadhar,Pan,Balance,Account_number,Username,Password,Added_by,Approver_Designation) values(?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement ps=conn.prepareStatement(query);
         ps.setString(1,customer.getName());
         ps.setString(2,customer.getAddress());
@@ -67,7 +67,7 @@ public class CustomerDatabase {
             customer.setAadhar(rs.getLong("Aadhar"));
             customer.setPan(rs.getString("Pan"));
             customer.setAddedby(rs.getString("Added_by"));
-            customer.setDesignation(rs.getString("Designation"));
+            customer.setDesignation(rs.getString("Approver_Designation"));
         }
         return customer;
     }
@@ -91,14 +91,14 @@ public class CustomerDatabase {
             customer.setAadhar(rs.getLong("Aadhar"));
             customer.setPan(rs.getString("Pan"));
             customer.setAddedby(rs.getString("Added_by"));
-            customer.setDesignation(rs.getString("Designation"));
+            customer.setDesignation(rs.getString("Approver_Designation"));
         }
         return customer;
     }
 
     public void updateCustomer(Customer customer) throws SQLException
     {
-        String query="update Customer set Name=?, Address=? ,Mobile=? ,Aadhar=? ,Pan=? , Balance =? ,Account_number=?, Username=?, Password=?, Added_by=?, Designation=? where Username = ?";
+        String query="update Customer set Name=?, Address=? ,Mobile=? ,Aadhar=? ,Pan=? , Balance =? ,Account_number=?, Username=?, Password=?, Added_by=?, Approver_Designation=? where Account_number = ?";
         PreparedStatement ps=conn.prepareStatement(query);
         ps.setString(1,customer.getName());
         ps.setString(2,customer.getAddress());
@@ -111,7 +111,7 @@ public class CustomerDatabase {
         ps.setString(9,customer.getPassword());
         ps.setString(10,customer.getAddedby());
         ps.setString(11,customer.getDesignation());
-        ps.setString(12,customer.getUsername());
+        ps.setString(12,customer.getAccnum());
         
         ps.executeUpdate();
     }

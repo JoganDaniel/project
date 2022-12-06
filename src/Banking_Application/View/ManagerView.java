@@ -54,7 +54,7 @@ public class ManagerView {
         Validate validate=new Validate();
         int choice=0;
         
-        while(choice!=6)
+        while(choice!=7)
         {
             System.out.println(z);
             System.out.println("1.Approve Account");
@@ -62,7 +62,8 @@ public class ManagerView {
             System.out.println("3.View Database");
             System.out.println("4.View Transactions");
             System.out.println("5.Add employee");
-            System.out.println("6.Log out");
+            System.out.println("6.Remove a Customer or Employee");
+            System.out.println("7.Log out");
             System.out.println(z);
             String tchoice;
             while(true){
@@ -112,7 +113,176 @@ public class ManagerView {
                 case 2:
                 {
                     System.out.println("1.Edit Customer details\n2.Edit Employee details\n"+z);
-                    //Edit customer and employee details(to be done)
+                    String tch;
+                    while(true){
+                    tch=s.nextLine();
+                    if(validate.choicecheck(tch)){
+                    break;
+                        }
+                    }
+                    int ch=Integer.parseInt(tch);
+                    switch(ch)
+                    {
+                        case 1:
+                        {
+                            Customer editcustomer;
+                            System.out.println("Enter the username of the customer you want to edit");
+                            String user=s.nextLine();
+                            if(customerControl.checkUser(user)){
+                                editcustomer=customerControl.getCustomer(user);
+                            }
+                            else{
+                                System.out.println("No accounts exist");
+                                break;
+                            }
+                            System.out.println("What do you want to edit\n"+z+"\n1.Name\n2.Address\n3.Mobile\n4.Username\n5.Aadhar\n6.Pan");
+                            String temch;
+                            while(true){
+                            temch=s.nextLine();
+                            if(validate.choicecheck(temch)){
+                            break;
+                                }
+                            }
+                            int editch=Integer.parseInt(tch);
+                            if(editch==1){
+                                String name1="";
+                                System.out.print("Enter new name: ");
+                                while(true){
+                                    name1=s.nextLine();
+                                if(validate.Name(name1)){
+                                break;}
+                                }
+                                editcustomer.setName(name1);
+                            }
+                            if(editch==2){
+                                System.out.println("Enter new address");
+                                String address=s.nextLine();
+                                editcustomer.setAddress(address); 
+                            }
+                            if(editch==3){
+                                String tempnum="";
+                                System.out.print("Enter new mobile number: ");
+                                while(true){
+                                    tempnum=s.nextLine();
+                                    if(validate.Mobilenumber(tempnum)){
+                                        break;}
+                                }
+                                editcustomer.setMobile(Long.parseLong(tempnum));
+                            }
+                            if(editch==4){
+                                String username="";
+                                while(true){
+                                    System.out.println("Enter new Username\n"+z);
+                                    username=s.nextLine();
+                                    if(validate.Username(username)){
+                                        break;
+                                    }
+                                }
+                                editcustomer.setUsername(username);
+                            }
+                            if(editch==5){
+                                String tempaadhar="";
+                                System.out.print("Enter new Aadhar number: ");
+                                while(true){
+                                    tempaadhar=s.nextLine();
+                                    if(validate.Aadhar(tempaadhar)){
+                                        break;}
+                                }
+                                editcustomer.setAadhar(Long.parseLong(tempaadhar));
+                            }
+                            if(editch==6){
+                                String pan;
+                                System.out.print("Enter new PAN: ");
+                                while(true)
+                                {
+                                    pan=s.nextLine();
+                                    if(validate.Pan(pan)){
+                                        break;
+                                    }
+                                }
+                                editcustomer.setPan(pan);
+                            }
+                            else{
+                                System.out.println("Enter correct choice");
+                                break;
+                            }
+                            customerControl.updateCustomer(editcustomer);
+                            break;
+                        }
+                        case 2:
+                        {
+                            Employee editemployee;
+                            System.out.println("Enter the Employee id of the bank Staff");
+                            int employee_id=s.nextInt();
+                            if(empControl.checkEmployeeexists(employee_id)){
+                                editemployee=empControl.getEmployee(employee_id);
+                            }
+                            else{
+                                System.out.println("Wrong id");
+                                break;
+                            }
+                            System.out.println("What do you want to edit\n"+z);
+                            System.out.println("1.Name\n2.Address\n3.Mobile\n4.Username\n5.Pan");           
+                            String temch;
+                            while(true){
+                            temch=s.nextLine();
+                            if(validate.choicecheck(temch)){
+                            break;
+                                }
+                            }
+                            int editch=Integer.parseInt(tch);
+                            if(editch==1){
+                                String name1="";
+                                System.out.print("Enter new name: ");
+                                while(true){
+                                    name1=s.nextLine();
+                                if(validate.Name(name1)){
+                                break;}
+                                }
+                                editemployee.setName(name1);
+                            }
+                            if(editch==2){
+                                System.out.println("Enter new address");
+                                String address=s.nextLine();
+                                editemployee.setAddress(address); 
+                            }
+                            if(editch==3){
+                                String tempnum="";
+                                System.out.print("Enter new mobile number: ");
+                                while(true){
+                                    tempnum=s.nextLine();
+                                    if(validate.Mobilenumber(tempnum)){
+                                        break;}
+                                }
+                                editemployee.setMobile(Long.parseLong(tempnum));
+                            }
+                            if(editch==4){
+                                String username="";
+                                while(true){
+                                    System.out.println("Enter new Username\n"+z);
+                                    username=s.nextLine();
+                                    if(validate.Username(username)){
+                                        break;
+                                    }
+                                }
+                                editemployee.setUsername(username);
+                            }
+                            if(editch==5){
+                                String pan;
+                                System.out.print("Enter new PAN: ");
+                                while(true)
+                                {
+                                    pan=s.nextLine();
+                                    if(validate.Pan(pan)){
+                                        break;
+                                    }
+                                }
+                                editemployee.setPan(pan);
+                            }
+                            empControl.updateEmployee(editemployee);
+                            break;
+                        }
+                    }
                     break;
                 }
                 case 3:
@@ -227,7 +397,7 @@ public class ManagerView {
                     while(true){
                     empid=s.nextInt();
                     if(empControl.checkEmployeeexists(empid)){
-                        System.out.println("Id already exists enter another id");
+                        System.out.println("Id already exists. Enter another id");
                     }
                     else{
                         break;
@@ -250,6 +420,10 @@ public class ManagerView {
                     break;
                 }
                 case 6:
+                {
+                    
+                }
+                case 7:
                 {
                     System.out.println("Logging out...");
                     try {
