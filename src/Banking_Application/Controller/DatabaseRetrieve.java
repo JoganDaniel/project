@@ -90,6 +90,17 @@ public class DatabaseRetrieve {
         dbview.displayAllCustomers(customerList, empid);
     }
 
+    public boolean checkUnapprovedCustomers() throws SQLException
+    {
+        
+        String query="select * from Customer where Account_number = '-'";
+        PreparedStatement ps=conn.prepareStatement(query);
+        ResultSet rs=ps.executeQuery();
+        if(rs.next()==false){
+            return false;
+        }
+        return true;
+    }
     public void UnapprovedCustomers() throws SQLException
     {
         

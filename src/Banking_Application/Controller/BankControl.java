@@ -32,7 +32,7 @@ public class BankControl
                 if(n<0){
                     n=7;
                 }
-                transactionid=transactionid*10+n;         
+                transactionid=Math.abs(transactionid*10+n);         
                 }
                 java.util.Date javaDate = new java.util.Date();
                 java.sql.Date dbDate = new java.sql.Date(javaDate.getTime());

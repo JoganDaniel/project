@@ -271,11 +271,13 @@ public class CustomerView
             }
             case 5:
             {
-                System.out.println("Hi "+logcustomer.getName()+" the balance in your account "+logcustomer.getAccnum()+" is "+logcustomer.getBalance());
+                System.out.println(z+"\nHi "+logcustomer.getName()+" the balance in your account "+logcustomer.getAccnum()+" is "+logcustomer.getBalance());
+                System.out.println(z);
                 break;
             }
             case 6:
             {
+                System.out.println("Account Number: "+logcustomer.getAccnum()+"\n"+z);
                 try {
                     dbview.displayTransaction(logcustomer.getAccnum());
                 } catch (SQLException e) {
@@ -287,7 +289,7 @@ public class CustomerView
             {
                 System.out.println("Logging out....Please wait\n"+z);
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {}
                 break;
             }

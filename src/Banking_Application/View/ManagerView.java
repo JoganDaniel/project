@@ -77,6 +77,10 @@ public class ManagerView {
             {
                 case 1:
                 {
+                    if(databaseRetrieve.checkUnapprovedCustomers()==false){
+                        System.out.println("No accounts to be approved");
+                        break;
+                    }
                     databaseRetrieve.UnapprovedCustomers();
                     //System.out.println(z);
                     System.out.println("Enter the username of the customer to be approved: ");
@@ -153,13 +157,15 @@ public class ManagerView {
                                 break;}
                                 }
                                 editcustomer.setName(name1);
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==2){
+                            else if(editch==2){
                                 System.out.println("Enter new address");
                                 String address=s.nextLine();
                                 editcustomer.setAddress(address); 
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==3){
+                            else if(editch==3){
                                 String tempnum="";
                                 System.out.print("Enter new mobile number: ");
                                 while(true){
@@ -168,8 +174,9 @@ public class ManagerView {
                                         break;}
                                 }
                                 editcustomer.setMobile(Long.parseLong(tempnum));
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==4){
+                            else if(editch==4){
                                 String username="";
                                 while(true){
                                     System.out.println("Enter new Username\n"+z);
@@ -179,8 +186,9 @@ public class ManagerView {
                                     }
                                 }
                                 editcustomer.setUsername(username);
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==5){
+                            else if(editch==5){
                                 String tempaadhar="";
                                 System.out.print("Enter new Aadhar number: ");
                                 while(true){
@@ -189,8 +197,9 @@ public class ManagerView {
                                         break;}
                                 }
                                 editcustomer.setAadhar(Long.parseLong(tempaadhar));
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==6){
+                            else if(editch==6){
                                 String pan;
                                 System.out.print("Enter new PAN: ");
                                 while(true)
@@ -201,9 +210,10 @@ public class ManagerView {
                                     }
                                 }
                                 editcustomer.setPan(pan);
+                                System.out.println("Value Updated....");
                             }
                             else{
-                                System.out.println("Enter correct choice");
+                                System.out.println("Enter correct choice!");
                                 break;
                             }
                             customerControl.updateCustomer(editcustomer);
@@ -240,13 +250,15 @@ public class ManagerView {
                                 break;}
                                 }
                                 editemployee.setName(name1);
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==2){
+                            else if(editch==2){
                                 System.out.println("Enter new address");
                                 String address=s.nextLine();
                                 editemployee.setAddress(address); 
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==3){
+                            else if(editch==3){
                                 String tempnum="";
                                 System.out.print("Enter new mobile number: ");
                                 while(true){
@@ -255,8 +267,9 @@ public class ManagerView {
                                         break;}
                                 }
                                 editemployee.setMobile(Long.parseLong(tempnum));
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==4){
+                            else if(editch==4){
                                 String username="";
                                 while(true){
                                     System.out.println("Enter new Username\n"+z);
@@ -266,8 +279,9 @@ public class ManagerView {
                                     }
                                 }
                                 editemployee.setUsername(username);
+                                System.out.println("Value Updated....");
                             }
-                            if(editch==5){
+                            else if(editch==5){
                                 String pan;
                                 System.out.print("Enter new PAN: ");
                                 while(true)
@@ -277,7 +291,11 @@ public class ManagerView {
                                         break;
                                     }
                                 }
+                                System.out.println("Value Updated....");
                                 editemployee.setPan(pan);
+                            }
+                            else{
+                                System.out.println("Enter correct choice..");
                             }
                             empControl.updateEmployee(editemployee);
                             break;
@@ -443,6 +461,7 @@ public class ManagerView {
                                     }
                             if(customerControl.checkUser(username)){
                                 customerControl.deleteCustomer(username);
+                                System.out.println("Customer removed..");
                             }    
                             else{
                                 System.out.println("Username not exixts");
@@ -481,7 +500,7 @@ public class ManagerView {
                     break;
                 }
                 default:{
-                System.out.println("Enter correct choice");
+                System.out.println("Enter correct choice!!!");
                 break;}
             }
         }
