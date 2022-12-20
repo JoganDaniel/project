@@ -18,20 +18,6 @@ public class BankControl
             TransactionModel transaction=new TransactionModel();
             TransactionDatabase transactionDatabase=new TransactionDatabase();
             try {
-                /*Random rand = new Random();
-                int transactionid=0,n=0;
-                for(int i =0; i < 10;i++)
-                {
-                n = Math.abs(rand.nextInt(10));
-                
-                if(i==0 && n==0){
-                    n=3;
-                }
-                if(n<0){
-                    n=7;
-                }
-                transactionid=Math.abs(transactionid*10+n);        
-                }*/
                 long transactionid=(long)(Math.floor(Math.random() * (9*Math.pow(10,9))) + Math.pow(10,(9)));
                 java.util.Date javaDate = new java.util.Date();
                 java.sql.Date dbDate = new java.sql.Date(javaDate.getTime());
