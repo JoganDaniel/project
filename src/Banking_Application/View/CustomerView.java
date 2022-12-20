@@ -226,7 +226,7 @@ public class CustomerView
                     System.out.println("Maximum limit exceeded");
                     break;
                 }
-                if(logcustomer.getBalance()-amount<2000){
+                if(logcustomer.getBalance()-amount<2000 || amount<=0){
                     System.out.println("Withdrawal not possible. Enter higher amount!!\n"+z);
                     break;
                 }
@@ -256,8 +256,8 @@ public class CustomerView
                     System.out.println("Maximum limit exceeded");
                     break;
                 }
-                if(logcustomer.getBalance()-amount<2000){
-                    System.out.println("Cannot transfer amount. Minimum balance should be maintained...");
+                if(logcustomer.getBalance()-amount<2000 || amount<=0){
+                    System.out.println("Cannot transfer amount. Enter greater amount...");
                     break;
                 }
                 transaction.transfer(logcustomer,amount,receiver_num);
@@ -295,7 +295,8 @@ public class CustomerView
             }
             default:{
             System.out.println("Enter valid option");
-            break;}
+            break;
+        }
         }
     }
     }

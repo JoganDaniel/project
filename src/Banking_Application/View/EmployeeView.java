@@ -212,13 +212,15 @@ public class EmployeeView {
                         break;}
                         }
                         logemployee.setName(name1);
+                        System.out.println("Value Updated....");
                     }
-                    if(editch==2){
+                    else if(editch==2){
                         System.out.println("Enter new address");
                         String address=s.nextLine();
                         logemployee.setAddress(address); 
+                        System.out.println("Value Updated....");
                     }
-                    if(editch==3){
+                    else if(editch==3){
                         String tempnum="";
                         System.out.print("Enter new mobile number: ");
                         while(true){
@@ -227,8 +229,9 @@ public class EmployeeView {
                                 break;}
                         }
                         logemployee.setMobile(Long.parseLong(tempnum));
+                        System.out.println("Value Updated....");
                     }
-                    if(editch==4){
+                    else if(editch==4){
                         String username="";
                         while(true){
                             System.out.println("Enter new Username\n"+z);
@@ -238,8 +241,9 @@ public class EmployeeView {
                             }
                         }
                         logemployee.setUsername(username);
+                        System.out.println("Value Updated....");
                     }
-                    if(editch==5){
+                    else if(editch==5){
                         String pan;
                         System.out.print("Enter new PAN: ");
                         while(true)
@@ -249,7 +253,11 @@ public class EmployeeView {
                                 break;
                             }
                         }
+                        System.out.println("Value Updated....");
                         logemployee.setPan(pan);
+                    }
+                    else{
+                        System.out.println("Enter correct choice..");
                     }
                     empControl.updateEmployee(logemployee);
                     break;

@@ -129,7 +129,7 @@ public class Validate {
 
     public boolean choicecheck(String string) {
         if(string == null || string.equals("")) {
-            System.out.print(z+"Enter an input");
+            System.out.println("Enter an input\n"+z);
             return false;
         }
         try {
