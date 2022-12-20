@@ -129,14 +129,14 @@ public class Validate {
 
     public boolean choicecheck(String string) {
         if(string == null || string.equals("")) {
-            //System.out.print(z+"Enter an input");
+            System.out.print(z+"Enter an input");
             return false;
         }
         try {
             Integer.parseInt(string);
             return true;
          } catch (NumberFormatException e) {
-            System.out.println("Enter a number"+z);
+            System.out.println("Enter a number\n"+z);
         }
         return false;
     }

@@ -11,7 +11,7 @@ public class DatabaseView {
     {
         //System.out.println("Name\t\tAddress\t\tMobile\t\tAadhar\t\tPan\t\tBalance\t\tAccount_number\t\tUsername");
         //System.out.println(customer.getName()+"\t\t"+customer.getAddress()+"\t\t"+customer.getMobile()+"\t\t"+customer.getAadhar()+"\t\t"+customer.getPan()+"\t\t"+customer.getBalance()+"\t\t"+customer.getAccnum()+"\t\t"+customer.getUsername());
-        System.out.println("Name: "+customer.getName()+"  |  Address: "+customer.getAddress()+"  |  Mobile: "+customer.getMobile()+"  |  Aadhar: "+customer.getAadhar()+"  |  Pan: "+customer.getPan()+"  |  Balance: "+customer.getBalance()+"  |  Account number: "+customer.getAccnum()+"  |  Username: "+customer.getUsername());
+        System.out.println("Name: "+customer.getName()+"  |  Address: "+customer.getAddress()+"  |  Mobile: "+customer.getMobile()+"  |  Aadhar: "+customer.getAadhar()+"  |  Pan: "+customer.getPan()+"  |  Balance: "+customer.getBalance()+"\n    Account number: "+customer.getAccnum()+"  |  Username: "+customer.getUsername());
         System.out.println("------------------------------------------------------".repeat(3));
     }
     public void displayCustomerDetails(Customer customer,int empid) throws SQLException
@@ -23,8 +23,6 @@ public class DatabaseView {
 
     public void displayUnapprovedCustomers(List<Customer> customerList) throws SQLException
     {
-        //System.out.println("\nName\t\t\tAddress\t\t\tMobile\t\t\tAadhar\t\t\tPan\t\t\tUsername");
-        //System.out.println("-------------------------------------------------".repeat(3));
         for(Customer customer: customerList){
             System.out.println("Name: "+customer.getName()+"  |  Address: "+customer.getAddress()+"  |  Mobile: "+customer.getMobile()+"  |  Aadhar: "+customer.getAadhar()+"  |  Pan: "+customer.getPan()+"  |  Username: "+customer.getUsername());
             System.out.println("------------------------------------------------------".repeat(3));

@@ -340,7 +340,14 @@ public class ManagerView {
                         case 2:
                         {
                             System.out.println("1.Display an Employee's Details\n2.Display all Employees");
-                            int option=s.nextInt();
+                            String t;
+                            while(true){
+                            t=s.nextLine();
+                            if(validate.choicecheck(t)){
+                            break;
+                                }
+                            }
+                            int option=Integer.parseInt(t);
                             if(option==1)
                             {
                                 int eid=0;
@@ -375,7 +382,14 @@ public class ManagerView {
                 case 4:
                 {
                     System.out.println("1.Display transaction of a customer\n2.Display all transactions\n"+z);
-                    int ch=s.nextInt();
+                    String tch;
+                    while(true){
+                    tch=s.nextLine();
+                    if(validate.choicecheck(tch)){
+                    break;
+                        }
+                    }
+                    int ch=Integer.parseInt(tch);
                     switch(ch)
                     {
                         case 1:
@@ -456,11 +470,12 @@ public class ManagerView {
                                     System.out.println("Enter the Username of the customer\n"+z);
                                     username=s.nextLine();
                                     if(validate.Username(username)==false){
+                                        System.out.println("Enter a valid Username");
                                         break;
                                     }
                             if(customerControl.checkUser(username)){
                                 customerControl.deleteCustomer(username);
-                                System.out.println("Customer removed..");
+                                System.out.println("Customer removed..\n"+z);
                             }    
                             else{
                                 System.out.println("Username not exixts");

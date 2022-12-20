@@ -15,7 +15,7 @@ public class TransactionDatabase {
         String query="insert into Transactions (Accountnumber,Transaction_id,Amount,Type,Date,Receiver_Accountnumber) values (?,?,?,?,?,?)";
         PreparedStatement ps=conn.prepareStatement(query);
         ps.setString(1,transaction.getSender_acc());
-        ps.setInt(2,transaction.getTransactionid());
+        ps.setLong(2,transaction.getTransactionid());
         ps.setDouble(3,transaction.getAmount());
         ps.setString(4,transaction.getType());
         ps.setDate(5,transaction.getDate());

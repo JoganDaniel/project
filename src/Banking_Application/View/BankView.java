@@ -141,12 +141,13 @@ public class BankView {
             }
             case 4:
             {
-                System.out.println(z+"\nThank you\n"+z);
+                System.out.println(z+"\n\t\tThank you\n"+z);
                 break;
             }
             default:
             {
                 System.out.println("Enter input from 1-4");
+                break;
             }
         }
     }

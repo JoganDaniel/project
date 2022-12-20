@@ -35,6 +35,10 @@ public class EmployeeView {
             }
         }
         Employee employee=empControl.getEmployee(empid);
+        if(employee.getMobile()!=0){
+            System.out.println("It is not your first login\n"+z);
+        }
+        else{
         System.out.println("Fill your details\n"+z);
         System.out.println("Enter your Address");
         s.nextLine();
@@ -80,11 +84,13 @@ public class EmployeeView {
         employee.setPassword(password);
 
         empControl.updateEmployee(employee);
-    }catch(SQLException e){}
-    System.out.println("Registration successful");
+        System.out.println("Registration successful");
         System.out.println(z);
     }
+    }catch(SQLException e){}
+    
 
+    }
 
     public boolean EmployeeLogin() throws SQLException
     {
@@ -135,7 +141,14 @@ public class EmployeeView {
         System.out.println("5.View Transactions ");
         System.out.println("6.Log out");
         System.out.println(z);
-        choice=s.nextInt();
+        String tchoice;
+        while(true){
+        tchoice=s.nextLine();
+        if(validate.choicecheck(tchoice)){
+            break;
+                }
+            }
+        choice=Integer.parseInt(tchoice);
         try{
         switch(choice)
         {

@@ -227,7 +227,7 @@ public class CustomerView
                     break;
                 }
                 if(logcustomer.getBalance()-amount<2000){
-                    System.out.println("Withdrawal not possible. Enter higher amount!!");
+                    System.out.println("Withdrawal not possible. Enter higher amount!!\n"+z);
                     break;
                 }
                 transaction.withdraw(logcustomer,amount);

@@ -3,7 +3,7 @@ import java.sql.Date;
 
 public class TransactionModel {
     private String sender_acc;
-    private int transactionid;
+    private long transactionid;
     private double amount;
     private String type;
     private Date date;
@@ -15,10 +15,10 @@ public class TransactionModel {
     public void setSender_acc(String sender_acc) {
         this.sender_acc = sender_acc;
     }
-    public int getTransactionid() {
+    public long getTransactionid() {
         return transactionid;
     }
-    public void setTransactionid(int transactionid) {
+    public void setTransactionid(long transactionid) {
         this.transactionid = transactionid;
     }
     public double getAmount() {

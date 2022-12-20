@@ -1,7 +1,5 @@
 package Banking_Application.Controller;
 import java.sql.SQLException;
-import java.util.Random;
-
 import Banking_Application.Database.ManagerDatabase;
 import Banking_Application.Database.TransactionDatabase;
 import Banking_Application.Model.Manager;
@@ -20,7 +18,7 @@ public class BankControl
             TransactionModel transaction=new TransactionModel();
             TransactionDatabase transactionDatabase=new TransactionDatabase();
             try {
-                Random rand = new Random();
+                /*Random rand = new Random();
                 int transactionid=0,n=0;
                 for(int i =0; i < 10;i++)
                 {
@@ -32,8 +30,9 @@ public class BankControl
                 if(n<0){
                     n=7;
                 }
-                transactionid=Math.abs(transactionid*10+n);         
-                }
+                transactionid=Math.abs(transactionid*10+n);        
+                }*/
+                long transactionid=(long)(Math.floor(Math.random() * (9*Math.pow(10,9))) + Math.pow(10,(9)));
                 java.util.Date javaDate = new java.util.Date();
                 java.sql.Date dbDate = new java.sql.Date(javaDate.getTime());
                 transaction.setSender_acc(sender_acc);

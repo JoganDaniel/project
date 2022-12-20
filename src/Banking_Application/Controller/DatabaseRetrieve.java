@@ -136,7 +136,7 @@ public class DatabaseRetrieve {
         {
             transaction=new TransactionModel();
             transaction.setSender_acc(rs.getString("Accountnumber"));
-            transaction.setTransactionid(rs.getInt("Transaction_id"));
+            transaction.setTransactionid(rs.getLong("Transaction_id"));
             transaction.setAmount(rs.getDouble("Amount"));
             transaction.setType(rs.getString("Type"));
             transaction.setDate(rs.getDate("Date"));
@@ -156,7 +156,7 @@ public class DatabaseRetrieve {
         {
             transaction=new TransactionModel();
             transaction.setSender_acc(rs.getString("Accountnumber"));
-            transaction.setTransactionid(rs.getInt("Transaction_id"));
+            transaction.setTransactionid(rs.getLong("Transaction_id"));
             transaction.setAmount(rs.getDouble("Amount"));
             transaction.setType(rs.getString("Type"));
             transaction.setDate(rs.getDate("Date"));
