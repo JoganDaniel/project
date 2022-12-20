@@ -53,7 +53,7 @@ public class Validate {
                 System.out.println("Enter correct Aadhar number\n"+z);
                 return false;}
         } catch (NumberFormatException e) {
-            System.out.println(z+"Please enter 12 digit aadhar number"+z);
+            System.out.println(z+"/nPlease enter 12 digit aadhar number/n"+z);
         }
         return false;
     }

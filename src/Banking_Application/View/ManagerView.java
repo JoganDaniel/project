@@ -172,7 +172,7 @@ public class ManagerView {
                                         break;}
                                 }
                                 editcustomer.setMobile(Long.parseLong(tempnum));
-                                System.out.println("Value Updated....");
+                                System.out.println("Value Updated....\n"+z);
                             }
                             else if(editch==4){
                                 String username="";
