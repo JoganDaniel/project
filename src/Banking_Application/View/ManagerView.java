@@ -23,9 +23,7 @@ public class ManagerView {
         System.out.println("Enter Username:");
         String user=s.nextLine();
         manager=bankControl.getManager(user);
-        if(user.equals(manager.getUsername()))
-        {}
-        else{
+        if(user.equals(manager.getUsername())==false){
             System.out.println("Invalid login\n"+z);
             return false;
         }
