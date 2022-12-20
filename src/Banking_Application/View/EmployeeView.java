@@ -89,7 +89,7 @@ public class EmployeeView {
     }
     }catch(SQLException e){}
     
-    
+
     }
 
     public boolean EmployeeLogin() throws SQLException
@@ -154,8 +154,11 @@ public class EmployeeView {
         {
             case 1:
             {
+                if(databaseRetrieve.checkUnapprovedCustomers()==false){
+                    System.out.println("No accounts to be approved\n"+z);
+                    break;
+                }
                 databaseRetrieve.UnapprovedCustomers();
-                //System.out.println(z);
                 System.out.println("Enter the username of the customer to be approved: ");
                 s.nextLine();
                 String user=s.nextLine();

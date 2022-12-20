@@ -77,11 +77,10 @@ public class ManagerView {
                 case 1:
                 {
                     if(databaseRetrieve.checkUnapprovedCustomers()==false){
-                        System.out.println("No accounts to be approved");
+                        System.out.println("No accounts to be approved\n"+z);
                         break;
                     }
                     databaseRetrieve.UnapprovedCustomers();
-                    //System.out.println(z);
                     System.out.println("Enter the username of the customer to be approved: ");
                     String user=s.nextLine();
                     if(customerControl.checkUser(user)==false){
