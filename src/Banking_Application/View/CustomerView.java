@@ -210,6 +210,10 @@ public class CustomerView
                     System.out.println("Maximum limit exceeded");
                     break;
                 }
+                if(amount<1){
+                    System.out.println("Enter a higher amount");
+                    break;
+                }
                 transaction.deposit(logcustomer,amount);
                 System.out.println(z+"\n\t\tBANK OF ZOZO\n"+z);
                 System.out.println("Name: "+logcustomer.getName()+"\t\tAccount number: "+logcustomer.getAccnum());
