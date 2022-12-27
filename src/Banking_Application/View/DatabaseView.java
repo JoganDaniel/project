@@ -17,7 +17,7 @@ public class DatabaseView {
     public void displayCustomerDetails(Customer customer,int empid) throws SQLException
     {
         System.out.println("Database access granted. Id: "+empid);
-        System.out.println("Name: "+customer.getName()+"  |  Address: "+customer.getAddress()+"  |  Mobile: "+customer.getMobile()+"  |  Aadhar: "+customer.getAadhar()+"  |  Pan: "+customer.getPan()+"  |  Balance: "+customer.getBalance()+"\n\tAccount number: "+customer.getAccnum()+"  |  Username: "+customer.getUsername()+"  |  Added by: "+customer.getAddedby()+"  |  Approver Designation: "+customer.getDesignation());
+        System.out.println("Name: "+customer.getName()+"  |  Address: "+customer.getAddress()+"  |  Mobile: "+customer.getMobile()+"  |  Aadhar: "+customer.getAadhar()+"  |  Pan: "+customer.getPan()+"  |  Balance: "+customer.getBalance()+"\n\tAccount number: "+customer.getAccnum()+"  |  Username: "+customer.getUsername()+"  |  Approved by: "+customer.getAddedby()+"  |  Approver Designation: "+customer.getDesignation());
         System.out.println("------------------------------------------------------".repeat(3));
     }
 
@@ -36,7 +36,7 @@ public class DatabaseView {
         //System.out.println("-------------------------------------------------".repeat(3));
         for(Customer customer: customerList){
             //System.out.println(customer.getName()+"\t\t"+customer.getAddress()+"\t\t"+customer.getMobile()+"\t\t"+customer.getAadhar()+"\t\t"+customer.getPan()+"\t\t"+customer.getBalance()+"\t\t"+customer.getAccnum()+"\t\t"+customer.getUsername()+"\t\t"+customer.getAddedby()+"\t\t"+customer.getDesignation());
-            System.out.println("Name: "+customer.getName()+"  |  Address: "+customer.getAddress()+"  |  Mobile: "+customer.getMobile()+"  |  Aadhar: "+customer.getAadhar()+"  |  Pan: "+customer.getPan()+"  |  Balance: "+customer.getBalance()+"\n\tAccount number: "+customer.getAccnum()+"  |  Username: "+customer.getUsername()+"  |  Added by: "+customer.getAddedby()+"  |  Approver Designation: "+customer.getDesignation());
+            System.out.println("Name: "+customer.getName()+"  |  Address: "+customer.getAddress()+"  |  Mobile: "+customer.getMobile()+"  |  Aadhar: "+customer.getAadhar()+"  |  Pan: "+customer.getPan()+"  |  Balance: "+customer.getBalance()+"\n\tAccount number: "+customer.getAccnum()+"  |  Username: "+customer.getUsername()+"  |  Approved by: "+customer.getAddedby()+"  |  Approver Designation: "+customer.getDesignation());
             System.out.println("------------------------------------------------------".repeat(3));
         }
     }

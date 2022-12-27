@@ -13,7 +13,7 @@ public class CustomerDatabase {
 
     public void addToCustomerTable(Customer customer) throws SQLException
     {
-        String query="insert into Customer(Name,Address,Mobile,Aadhar,Pan,Balance,Account_number,Username,Password,Added_by,Approver_Designation) values(?,?,?,?,?,?,?,?,?,?,?)";
+        String query="insert into Customer(Name,Address,Mobile,Aadhar,Pan,Balance,Account_number,Username,Password,Approved_by,Approver_Designation) values(?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement ps=conn.prepareStatement(query);
         ps.setString(1,customer.getName());
         ps.setString(2,customer.getAddress());
@@ -66,7 +66,7 @@ public class CustomerDatabase {
             customer.setPassword(rs.getString("Password"));
             customer.setAadhar(rs.getLong("Aadhar"));
             customer.setPan(rs.getString("Pan"));
-            customer.setAddedby(rs.getString("Added_by"));
+            customer.setAddedby(rs.getString("Approved_by"));
             customer.setDesignation(rs.getString("Approver_Designation"));
         }
         return customer;
@@ -90,7 +90,7 @@ public class CustomerDatabase {
             customer.setPassword(rs.getString("Password"));
             customer.setAadhar(rs.getLong("Aadhar"));
             customer.setPan(rs.getString("Pan"));
-            customer.setAddedby(rs.getString("Added_by"));
+            customer.setAddedby(rs.getString("Approved_by"));
             customer.setDesignation(rs.getString("Approver_Designation"));
         }
         return customer;
@@ -98,7 +98,7 @@ public class CustomerDatabase {
 
     public void updateCustomer(Customer customer) throws SQLException
     {
-        String query="update Customer set Name=?, Address=? ,Mobile=? ,Aadhar=? ,Pan=? , Balance =? ,Account_number=?, Username=?, Password=?, Added_by=?, Approver_Designation=? where Username = ?";
+        String query="update Customer set Name=?, Address=? ,Mobile=? ,Aadhar=? ,Pan=? , Balance =? ,Account_number=?, Username=?, Password=?, Approved_by=?, Approver_Designation=? where Username = ?";
         PreparedStatement ps=conn.prepareStatement(query);
         ps.setString(1,customer.getName());
         ps.setString(2,customer.getAddress());

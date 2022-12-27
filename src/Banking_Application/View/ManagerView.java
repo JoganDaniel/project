@@ -181,8 +181,13 @@ public class ManagerView {
                                         break;
                                     }
                                 }
+                                if(customerControl.checkUser(username)){
+                                    System.out.println("Username already exists...\n"+z);
+                                }
+                                else{
                                 editcustomer.setUsername(username);
                                 System.out.println("Value Updated....");
+                                }
                             }
                             else if(editch==5){
                                 String tempaadhar="";
@@ -323,6 +328,7 @@ public class ManagerView {
                             int option=s.nextInt();
                             if(option==1){
                                 System.out.println("Enter the username of the customer");
+                                s.nextLine();
                                 String user=s.nextLine();
                                 if(customerControl.checkUser(user)==false){
                                     System.out.println("No users found");

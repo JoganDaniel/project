@@ -237,7 +237,7 @@ public class EmployeeView {
                             System.out.println("Enter new Username\n"+z);
                             username=s.nextLine();
                             if(validate.Username(username)){
-                                break;
+                                break;    
                             }
                         }
                         logemployee.setUsername(username);

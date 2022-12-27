@@ -60,7 +60,7 @@ public class DatabaseRetrieve {
             customer.setBalance(rs.getDouble("Balance"));
             customer.setAccnum(rs.getString("Account_number"));
             customer.setUsername(rs.getString("Username"));
-            customer.setAddedby(rs.getString("Added_by"));
+            customer.setAddedby(rs.getString("Approved_by"));
             customer.setDesignation(rs.getString("Approver_Designation"));
         }
         dbview.displayCustomerDetails(customer, empid);
@@ -83,7 +83,7 @@ public class DatabaseRetrieve {
             customer.setBalance(rs.getDouble("Balance"));
             customer.setAccnum(rs.getString("Account_number"));
             customer.setUsername(rs.getString("Username"));
-            customer.setAddedby(rs.getString("Added_by"));
+            customer.setAddedby(rs.getString("Approved_by"));
             customer.setDesignation(rs.getString("Approver_Designation"));
             customerList.add(customer);
         }
